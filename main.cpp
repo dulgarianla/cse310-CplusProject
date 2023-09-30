@@ -15,43 +15,55 @@ int main() {
     // Using cin for user input
     std::cout << "Please enter the first number: " << std::endl;
     std::cout << borders << std::endl;
-        if (!(std::cin >> number1))
-        {
-            return 0; // Exit if input is invalid
-        }
+    if (!(std::cin >> number1))
+    {
+        // Display an error message for invalid input
+        std::cerr << "Invalid input for the first number. Please try again." << std::endl;
+        return 1; // Exit the program with an error code
+    }
 
     // Input for the operator
     std::cout << "Please now enter the operator you want to use (+, -, *, /): " << std::endl;
     std::cout << borders << std::endl;
-        if (!(std::cin >> options))
-        {
-            return 0; // Exit if input is invalid
-        }
+
+    if (!(std::cin >> options))
+    {
+        // Display an error message for invalid input
+        std::cerr << "Invalid input for the operator. Please try again." << std::endl;
+        return 1; // Exit the program with an error code
+    }
 
     // Input for the second number
     std::cout << "Please enter the second number: " << std::endl;
     std::cout << borders << std::endl;
-        if (!(std::cin >> number2))
-        {
-            return 0; // Exit if input is invalid
-        }
+
+    if (!(std::cin >> number2))
+    {
+        // Display an error message for invalid input
+        std::cerr << "Invalid input for the second number. Please try again." << std::endl;
+        return 1; // Exit the program with an error code
+    }
     std::cout << borders << std::endl;
 
     // Perform the calculation based on the selected operator
+    //addtion operator
     if (options == '+')
     {
         results = number1 + number2;
     }
+    //subtraction operator
     else if (options == '-')
     {
         results = number1 - number2;
     }
+    //mulipulation operator
     else if (options == '*')
     {
         results = number1 * number2;
     }
-    else if (options == '/')
-    {
+    //divisiom operator
+    else if (options == '/') {
+
         results = number1 / number2;
     }
 
