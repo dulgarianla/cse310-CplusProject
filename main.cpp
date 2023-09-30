@@ -1,67 +1,109 @@
 #include <iostream>
 #include <string>
+#include <limits>
 
 int main() {
-    // To add borders to help separate the questions for the user and make it look nicer
+    // Create borders to help separate the questions for the user and making it easier to follow along
     std::string borders(100, '-');
+
+    // Declare variables for storing user input and calculation results
     double number1, number2, results;
     char options;
 
-    // Start of the program
+    // Display a greeting message to the user and print a border line
     std::cout << "Hi! I'm Calcky The Calculator" << std::endl;
     std::cout << borders << std::endl;
 
     // Input for the first number from user input
-    // Using cin for user input
-    std::cout << "Please enter the first number: " << std::endl;
-    std::cout << borders << std::endl;
-    if (!(std::cin >> number1))
+    // Prompt the user to enter the first number
+    while (true)
     {
-        // Display an error message for invalid input
-        std::cerr << "Invalid input for the first number. Please try again." << std::endl;
-        return 1; // Exit the program with an error code
+        std::cout << "Please enter the first number: " << std::endl;
+        // Check if the input is valid (a double)
+        if (std::cin >> number1) {
+            break; // Break out of the loop if valid input is provided
+        }
+        else
+        {
+            // Display an error message for invalid input
+            std::cerr << "Invalid input for the first number. Please try again." << std::endl;
+            // Clear any error flags and the input buffer
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
 
     // Input for the operator
-    std::cout << "Please now enter the operator you want to use (+, -, *, /): " << std::endl;
-    std::cout << borders << std::endl;
-
-    if (!(std::cin >> options))
+    // Prompt the user to enter an operator (+, -, *, /)
+    while (true)
     {
-        // Display an error message for invalid input
-        std::cerr << "Invalid input for the operator. Please try again." << std::endl;
-        return 1; // Exit the program with an error code
+        std::cout << "Please enter the operator you want to use (+, -, *, /): " << std::endl;
+        // Check if the input is valid (a character) and within the allowed operators
+        if (std::cin >> options)
+        {
+            if (options == '+' || options == '-' || options == '*' || options == '/')
+            {
+                break; // Break out of the loop if a valid operator is provided
+            }
+            else
+            {
+                // Display an error message for an invalid operator
+                std::cerr << "Invalid input for the operator. Please try again." << std::endl;
+                // Clear any error flags and the input buffer
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+        }
+        else
+        {
+            // Display an error message for invalid input
+            std::cerr << "Invalid input for the operator. Please try again." << std::endl;
+            // Clear any error flags and the input buffer
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
 
     // Input for the second number
-    std::cout << "Please enter the second number: " << std::endl;
-    std::cout << borders << std::endl;
-
-    if (!(std::cin >> number2))
+    // Prompt the user to enter the second number
+    while (true)
     {
-        // Display an error message for invalid input
-        std::cerr << "Invalid input for the second number. Please try again." << std::endl;
-        return 1; // Exit the program with an error code
+        std::cout << "Please enter the second number: " << std::endl;
+        // Check if the input is valid (a double)
+        if (std::cin >> number2)
+        {
+            break; // Break out of the loop if valid input is provided
+        }
+        else
+        {
+            // Display an error message for invalid input
+            std::cerr << "Invalid input for the second number. Please try again." << std::endl;
+            // Clear any error flags and the input buffer
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
+
+    // Print a border line
     std::cout << borders << std::endl;
 
     // Perform the calculation based on the selected operator
-    //addtion operator
+    // Addition operator
     if (options == '+')
     {
         results = number1 + number2;
     }
-    //subtraction operator
+        // Subtraction operator
     else if (options == '-')
     {
         results = number1 - number2;
     }
-    //mulipulation operator
+        // Multiplication operator
     else if (options == '*')
     {
         results = number1 * number2;
     }
-    //divisiom operator
+        // Division operator
     else if (options == '/') {
 
         results = number1 / number2;
