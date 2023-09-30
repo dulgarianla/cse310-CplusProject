@@ -10,7 +10,7 @@ int main() {
     double number1, number2, results;
     char options;
 
-    // Display a greeting message to the user and print a border line
+    // Display a greeting message to the user and print a borderline
     std::cout << "Hi! I'm Calcky The Calculator" << std::endl;
     std::cout << borders << std::endl;
 

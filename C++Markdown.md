@@ -3,9 +3,7 @@ Welcome to the overview of today's code and what the purpose of it.
 
 The software I wrote is a simple Calculator program in C++ named "Calcky The Calculator." This program allows users to perform basic operations like addition, subtraction, multiplication, and division on two numbers. The program prompts the user to enter the first number, the desired operator, and the second number. After receiving input, it performs the requested operation and displays the result to the user.
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Demo Video: "Calculator in C++"](http://youtube.link.goes.here)
+[Demo Video: "Calculator in C++"](https://youtu.be/SNjv8e3QubU?si=gPiTQSxgv5vfrEMs)
 
 # Development Environment
 Here are the tools that was use for my software and what each of them are and how they work.
